@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('backgound11.jpg'); /* Specify the path to your background image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .container {
+      text-align: center;
+      margin-top: 100px;
+      background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent background to the container */
+      padding: 20px;
+      border-radius: 10px; /* Add rounded corners to the container */
+    }
+    .confirmation-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    /* Add this CSS to align labels and input fields in line */
+    label,
+    input[type="email"],
+    input[type="password"] {
+      display: inline-block;
+      margin-bottom: 10px; /* Optional: Add some space between each label-input pair */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to our website!</h1>
+    <p>Are you sure you want to proceed?</p>
+    <button class="confirmation-btn" onclick="proceed()">Yes</button>
+    <a href="https://nlist.inflibnet.ac.in/vregister.php">
+    <button  class="confirmation-btn" onclick="cancel()">No</button>
+    </a>
+    
+    <div id="applicationIdField" class="hidden">
+      <form id="applicationForm" action="BCA.html">
+        <label for="username">User name (Email):</label>
+        <input type="email" id="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required> <!-- Use type="password" for password fields -->
+        <br>
+    
+        <button type="submit">Submit</button>
+    
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    // Check if the flag exists in localStorage
+    if (localStorage.getItem('visited')) {
+      // Redirect to the next page
+      window.location.href = 'BCA.html';
+    }
+
+    function proceed() {
+      document.getElementById("applicationIdField").classList.remove("hidden");
+      // Set the flag indicating the page has been visited
+      localStorage.setItem('visited', 'true');
+    }
+
+    function cancel() {
+      alert("You chose not to proceed.");
+      // You can redirect to a different page or take other actions here
+    }
+  </script>
+</body>
+</html>
