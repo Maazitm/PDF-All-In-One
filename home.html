@@ -11,13 +11,20 @@
     <link rel="stylesheet" media="screen and (max-width:1170px)" href="phone.css">
     <link rel="icon" href="logo.png" type="image/x-icon">
     <style>
-        @media screen and (max-width:952px){
-    .footer-content{
+    @media screen and (max-width:952px){
+    .footer-content::before{
+        content:"/a";
+        white-space:pre;
         font-size: 10px; /* Adjust font size for smaller screens */
         line-height: 1.3; /* Adjust line height for smaller screens */
-    
     }
 }
+        .footer-content::after{
+            content:"/a";
+        white-space:pre;
+        font-size: 10px; /* Adjust font size for smaller screens */
+        line-height: 1.3; 
+        }
 
     </style>
     <title>Home page</title>
